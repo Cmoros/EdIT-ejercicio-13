@@ -1,0 +1,124 @@
+(Leer este documento de texto en una ventana grande o maximizada, para evitar que el ajuste de línea rompa los formatos)
+
+1 - Crear un archivo index.html con un formulario que le solicite al usuario los siguientes datos:
+"Primer nombre", "Primer apellido", "Tipo de documento", "Número de documento" y "Dirección"
+Utilizar en el HTML nomenclatura BEM, que será utilizada para estilizarlo desde CSS.
+
+
+2 - Estilizar el documento con CSS, utilizando solo un nombre de clase en cada selector, para que, inicialmente, cada label (salvo los labels de los radios) y elemento de formulario (excepto los radios) se muestre uno debajo del otro, de la siguiente manera:
+
+Primer nombre:
+___________________________________
+
+Primer apellido:
+___________________________________
+
+Tipo de documento
+(_) DNI (_) CUIL                      
+
+Número de documento
+___________________________________
+
+Dirección:
+___________________________________
+
+
+Sin embargo, si la resolución alcanza los 425px de ancho, deberán presentarse así:
+
+Primer nombre:       ________________________
+
+Primer apellido:     ________________________
+
+Tipo de documento:   (_) DNI  (_) CUIL
+
+Número de documento: ________________________
+
+Dirección:
+_____________________________________________
+
+
+A partir de los 768px, deberán mostrarse de la siguiente manera:
+
+Primer nombre:                            Primer apellido:
+________________________________________  ________________________________________
+
+Tipo de documento                         Número de documento
+(_) DNI  (_) CUIL                         ________________________________________
+
+Dirección:
+__________________________________________________________________________________
+
+
+Se pueden adicionar otros breakpoints si se desea.
+
+Investigar y definir qué resolución máxima se utilizará para que el formulario no se estire demasiado en resoluciones más grandes.
+
+Trabajar con media queries, utilizando la regla min-width, por ejemplo, @media (min-width: 425px), en lugar de max-width.
+
+Tip 1: Tener en cuenta que un flex-item puede, a su vez, ser un flex-container, es decir, que podría tener dentro sus propios hijos/items flex. En este tipo de layouts es probable que sea necesario utilizar divs contenedores para agrupar componentes.
+
+Tip 2: Ponerle border de 1px y agregarle padding de al menos 2px al formulario y todos sus elementos descendientes, para visualizar en todo momento qué lugar ocupan. Luego, quitarlos, cuando ya no sean necesarios.
+
+Aplicar los estilos de CSS que se considere para que el formulario se presente de manera profesional y moderna.
+
+
+3 - Estilizar el formulario para que todos los campos pueden informar correcta y prolijamente cuando tengan un error de validación. Por ejemplo, si los campos "Primer apellido", "Tipo de Documento" y "Dirección:" tuviesen que informar un error con el texto "Lorem ipsum dolor sit, amet consectetur adipisicing elit."
+lo podrían hacer así:
+
+Primer nombre:                            Primer apellido:
+________________________________________  ________________________________________
+                                          Lorem ipsum dolor sit, amet
+                                          consectetur adipisicing elit.
+
+Tipo de documento                         Número de documento
+(_) DNI  (_) CUIL                         ________________________________________
+Lorem ipsum dolor sit, amet consectetur
+adipisicing elit.
+
+Dirección:
+__________________________________________________________________________________
+Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+
+
+4 - Realizar las siguientes validaciones en los campos, informando los errores en tiempo real y al intentar enviar el formulario.
+
+Primer nombre
+- optativo
+- de 3 a 10 caracteres en total
+- la primera letra en mayúsculas o minúsculas
+- las siguientes letras solo en minúsculas
+- soporta caracteres del español
+- no soporta espacios ni ningún otro caracteres más que los mencionados 
+
+Primer apellido
+- obligatorio
+- de 2 a 20 caracteres en total
+- todas o algunas letras en mayúsculas y/o minúsculas en cualquier parte del texto
+- soporta caracteres del español y apóstrofes o comillas simples (')
+- no soporta espacios ni ningún otro caracter más que los mencionados 
+
+Tipo de documento:
+- el usuario debe seleccionar una de las dos opciones disponibles
+- elementos del tipo radio que permitan elegir DNI o CUIL
+
+Número de documento
+Debe habilitarse solo si se seleccionó un tipo de documento en el campo anterior.
+Si en el campo anterior se seleccionó DNI, debe permitirse ingresar un número de DNI de 7 u 8 dígitos, pudiendo adicionarse 2 caracteres más para ingresar separadores de miles. Ej: "1.234.567", "12.234.567", "1234567", "12345678". Solo se permitirá el uso del punto como separador de miles, es decir, en las ubicaciones indicadas en los ejemplos. Tampoco se permitirá ingresar un único punto en el número. Es decir, los valores "1.234567" o "1234.567" no deben admitirse.
+Si, en cambio, se seleccionó la opción CUIL, debe permitir ingresar un CUIL de 11 dígitos, más dos guiones medios optativos. Ej: "20-33444555-6", "20334445556". Solo se permitirá utilizar el guión luego de los primeros 2 dígitos y antes del último. Deberán ingresarse ambos guiones en las ubicaciones correspondientes o ninguno. No será válido ingresar los guiones en ubicaciones distintas a las indicadas, como así tampoco ingresar solo uno.
+
+Dirección:
+- optativo
+- de 10 a 200 caracteres
+- soporta caracteres en mayúsculas y minúsculas del español y portugués
+- adicionalmente debe soportar espacios, números, comas, guiones medios, puntos, paréntesis, comillas simples y dobles, símbolo de grado "°" y barra "/".
+
+
+5 - Completar el archivo "tests.txt" con 10 ejemplos de textos que pasen las validaciones y 10 más que no las pasen para cada uno de los campos a validar. Colocar todos los ejemplos dentro de comillas dobles.
+
+
+BONUS:
+- Utilizar transiciones al momento de mostrar y ocultar los mensajes de error y para darle feedback al usuario en hover y focus.
+- Adaptar las validaciones existentes en los campos de nombre y apellido, con el fin de habilitar el ingreso de dos o más nombres y/o apellidos.
+- Adicionar un resumen de errores de validación al inicio del formulario, que muestre, en todo momento, el detalle acumulado de errores de validaciones informados.
+- Adicionar un botón de reseteo del formulario que, sin recargar la página, restablezca el formulario y quite los errores existentes.
+- Agregar al menos 4 campos adicionales con validaciones de distinta índole (ej: email, código postal, etc). Definir criteriosamente las validaciones que correspondan.

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+<header>
+
+</header>
+<main>
+    <div class="form-container">
+        <form action="post" class="main-form">
+            <div class="main-form-name">
+                <div class="input-group">
+                    <label for="first-name" class="input-group__label">
+                        Primer nombre:
+                    </label>
+                    <input id="first-name" class="input-group__input" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="last-name" class="input-group__label">
+                        Primer apellido:
+                    </label>
+                    <input id="last-name" class="input-group__input" type="text">
+                </div>
+            </div>
+
+            <div class="main-form-id">
+                <div class="input-group">
+                    <p class="input-group__description">
+                        Tipo de documento:
+                    </p>
+                    <div class="input-group-idtype">
+                        <input type="radio" name="id-type" value="DNI" id="DNI" class="input-group-idtype__input">
+                        <label for="DNI" class="input-group-idtype__label">
+                            DNI
+                        </label>
+                        <input type="radio" name="id-type" value="CUIL" id="CUIL" class="input-group-idtype__input">
+                        <label for="CUIL" class="input-group-idtype__label">
+                            CUIL
+                        </label>
+                    </div>
+
+                </div>
+                <div class="input-group">
+                    <label for="id-number" class="input-group__label">
+                        Número de documento:
+                    </label>
+                    <input type="text" class="input-group__input--id" id="id-number">
+                </div>
+            </div>
+
+
+            <div class="input-group input-group--address">
+                <label for="address" class="input-group--address__label">
+                    Dirección:
+                </label>
+                <input id="address" class="input-group--address__input" type="text">
+            </div>
+        </form>
+
+    </div>
+</main>
+<footer>
+    
+</footer>
+<script src="./js/main.js"></script>
+</body>
+</html>
