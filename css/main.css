@@ -382,6 +382,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 5px;
+  position: relative;
 }
 .input-group__label {
   margin-bottom: 0.5em;
@@ -469,4 +470,14 @@ body {
     display: flex;
     gap: 15px;
   }
+}
+
+.error-display__popup {
+  font-size: 0.9em;
+  color: #ff3333;
+  font-weight: 600;
+  font-family: "Roboto", sans-serif;
+  position: absolute;
+  top: 50px;
+  padding: 0.5em;
 }/*# sourceMappingURL=main.css.map */
