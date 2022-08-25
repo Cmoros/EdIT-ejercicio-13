@@ -13,7 +13,7 @@
 </header>
 <main>
     <div class="form-container">
-        <form action="post" class="main-form">
+        <form action="post" class="main-form" autocomplete="off">
             <div class="main-form-name">
                 <div class="input-group">
                     <label for="first-name" class="input-group__label">
@@ -50,7 +50,7 @@
                     <label for="id-number" class="input-group__label">
                         Número de documento:
                     </label>
-                    <input type="text" class="input-group__input--id" id="id-number" required>
+                    <input type="text" class="input-group__input--id" id="id-number" required disabled>
                 </div>
             </div>
 
@@ -60,10 +60,38 @@
                     Dirección:
                 </label>
                 <input id="address" class="input-group--address__input" type="text">
+
+                <label class="input-group--address__label" for="zipcode">Código postal</label>
+                <input class="input-group--address__input" type="text" name="zip-code" id="zipcode">
+            </div>
+            
+            <div class="input-group">
+                <label for="phone" class="input-group__label">
+                    Teléfono:
+                </label>
+                <input id="phone" class="input-group__input" type="text">
+            </div>
+
+            <div class="input-group">
+                <label for="email" class="input-group__label">
+                    Email:
+                </label>
+                <input id="email" class="input-group__input" type="text">
+            </div>
+
+            <div class="input-group">
+                <label for="password" class="input-group__label">
+                    Contraseña:
+                </label>
+                <input id="password" class="input-group__input" type="password">
             </div>
 
             <input type="reset" value="Resetear">
         </form>
+
+    </div>
+
+    <div class="error-container">
 
     </div>
 </main>
