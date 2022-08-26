@@ -16,7 +16,7 @@
     flex-direction: column;
     gap: 1.5em;
     padding: 2em;
-    background-color: #bebebe;
+    background-color: #36393f;
     height: 250px;
     overflow: auto;
     border-radius: 1em;
@@ -30,6 +30,7 @@
         border: #5e1111 1px solid;
         background-color: #f69797;
         color: #5e1111;
+        border-radius: 1em;
         
         &__header {
             display: flex;

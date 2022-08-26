@@ -424,7 +424,7 @@ main {
 
 .error-display__popup {
   font-size: 0.9em;
-  color: #dc2c2c;
+  color: #cb7678;
   font-weight: 600;
   font-family: "Roboto", sans-serif;
   position: absolute;
@@ -554,7 +554,7 @@ main {
   flex-direction: column;
   gap: 1.5em;
   padding: 2em;
-  background-color: #bebebe;
+  background-color: #36393f;
   height: 250px;
   overflow: auto;
   border-radius: 1em;
@@ -568,6 +568,7 @@ main {
   border: #5e1111 1px solid;
   background-color: #f69797;
   color: #5e1111;
+  border-radius: 1em;
 }
 .error-display__item__header {
   display: flex;

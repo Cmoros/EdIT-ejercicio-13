@@ -92,6 +92,13 @@ function displayErrorContainerAtFirstError () {
     }
 }
 
+function displayCheckOnInput (ev) {
+    ev.target.style.background='url(./css/assets/check.svg) no-repeat right';
+    ev.target.style.backgroundColor = '#202225';
+    ev.target.style.backgroundSize = '1.2em';
+    ev.target.style.backgroundPosition = '98% center';
+}
+
 // 3. Adding Events
 
 document.querySelectorAll('.input-group-idtype__input').forEach(inputName => {
@@ -111,9 +118,9 @@ firstName.addEventListener('change', e =>{
     if(clearInput(e)){return}
     trimValue(e);
     if(validation(e.target.value, regExpFirstName) || (e.target.value === '')){
-        e.target.style.backgroundColor= 'green';
+        displayCheckOnInput(e);
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError('Error en el campo de nombre', 'Nombre inválido. Ingrese solo letras mayúsc. o minúsc.');
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -126,7 +133,7 @@ lastName.addEventListener('change', e =>{
     if(validation(e.target.value, regExpLastName)){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de apellido', 'Apellido inválido. Ingrese solo letras mayúsc. o minúsc.');
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -147,7 +154,7 @@ idNumber.addEventListener('change', e => {
     if(validated){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError (`Error en el campo de número de ${idType.value}`, `Número de ${idType.value} inválido. Ingrese un número de ${idType.value} válido.`);
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -160,7 +167,7 @@ address.addEventListener('change', e =>{
     if(validation(e.target.value, regExpAddress) || (e.target.value === '')){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de dirección', 'Dirección inválida. Ingrese una dirección válida.');
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -173,7 +180,7 @@ zipCode.addEventListener('change', e =>{
     if(validation(e.target.value, regExpZipCode || (e.target.value === ''))){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de código postal', 'Código postal inválido. Ingrese un código postal válido.');
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -186,7 +193,7 @@ phone.addEventListener('change', e =>{
     if(validation(e.target.value, regExpPhone) || (e.target.value === '')){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de teléfono', 'Teléfono inválido. Ingrese un teléfono válido.');
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -199,7 +206,7 @@ username.addEventListener('change', e =>{
     if(validation(e.target.value, regExpUsername) || (e.target.value === '')){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de nombre de usuario', 'Nombre de usuario inválido. Ingrese un nombre de usuario válido.');
         displayWarningError(e, error);
         displayErrorInLog(error);
@@ -211,7 +218,7 @@ password.addEventListener('change', e =>{
     if(validation(e.target.value, regExpPassword) || (e.target.value === '')){
         e.target.style.backgroundColor= 'green';
     } else {
-        e.target.style.backgroundColor= '#f69797';
+        e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de contraseña', 'Contraseña inválida. Ingrese una contraseña válida.');
         displayWarningError(e, error);
         displayErrorInLog(error);
