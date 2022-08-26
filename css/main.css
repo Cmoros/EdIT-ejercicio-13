@@ -74,8 +74,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -556,6 +555,8 @@ main {
   width: 90%;
   max-width: 900px;
   align-self: center;
+  position: relative;
+  z-index: -1;
 }
 
 .error-display {
@@ -571,6 +572,7 @@ main {
 }
 .error-display__item {
   display: flex;
+  position: relative;
   flex-direction: column;
   padding: 1em;
   gap: 0.5em;
@@ -629,4 +631,6 @@ main {
 }
 .reset-button:active {
   opacity: 0.5;
-}/*# sourceMappingURL=main.css.map */
+}
+
+/*# sourceMappingURL=main.css.map */
