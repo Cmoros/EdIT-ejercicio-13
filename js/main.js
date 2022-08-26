@@ -118,13 +118,15 @@ function displayErrorContainerAtFirstError () {
     errorContainer.style.top = `-${+ size + 32}px`
     setTimeout(() => {
         errorContainer.style.transition = "top 0.5s";
-        setTimeout(()=>errorContainer.style.top = "0",0.15)
+        setTimeout(()=>errorContainer.style.top = "0",0.15);
+        setTimeout(() => errorContainer.style.zIndex = "initial", 500);
     }, 15)
 }
 
 function hideErrorContainer() {
     let size = getComputedStyle(errorContainer).height.slice(0,-2);
-    errorContainer.style.top = `-${+ size + 32}px`
+    errorContainer.style.zIndex = "-1";
+    setTimeout(()=>errorContainer.style.top = `-${+ size + 32}px`, 15)
         setTimeout(() => {
             errorDisplay.innerHTML = '';
             errorContainer.style.transition = "";
