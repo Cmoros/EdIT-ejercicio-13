@@ -49,7 +49,6 @@ function clearInput(e) {
 }
 
 function displayErrorInLog (error) {
-    displayErrorContainerAtFirstError();
     totalErrorsRegistered++;
     let divError = document.createElement('div');
     let headerError = document.createElement('h3');
@@ -62,7 +61,7 @@ function displayErrorInLog (error) {
     divError.appendChild(headerError);
     divError.appendChild(msgError);
     errorDisplay.prepend(divError);
-    return divError
+    return divError;
 }
 
 function createError (err, msg) {
@@ -86,17 +85,53 @@ function displayWarningError (ev, err) {
 }
 
 
-function displayErrorContainerAtFirstError () {
-    if(errorContainer.style.display !== 'flex'){
-        errorContainer.style.display = 'flex'
-    }
-}
 
 function displayCheckOnInput (ev) {
     ev.target.style.background='url(./css/assets/check.svg) no-repeat right';
     ev.target.style.backgroundColor = '#202225';
     ev.target.style.backgroundSize = '1.2em';
     ev.target.style.backgroundPosition = '98% center';
+}
+
+function pushErrorAnimation(error) {
+    let newDivError = displayErrorInLog(error);
+    let errorLogArray = document.querySelectorAll('.error-display__item');
+    if (errorLogArray.length === 1) {
+        displayErrorContainerAtFirstError();
+        return;
+    }
+    let size = getComputedStyle(newDivError).height.slice(0,-2);
+    for (let divError of errorLogArray) {
+        divError.style.top = `-${+ size + 24}px`
+        console.log(divError.style.top);
+        setTimeout(() => {
+            divError.style.transition = "top 0.5s";
+            setTimeout(()=>divError.style.top = "0",0.15)
+            setTimeout(() => divError.style.transition = "",500)
+        }, 15)
+    }
+}
+
+function displayErrorContainerAtFirstError () {
+    errorContainer.style.display = 'flex'
+    let size = getComputedStyle(errorContainer).height.slice(0,-2);
+    errorContainer.style.top = `-${+ size + 32}px`
+    setTimeout(() => {
+        errorContainer.style.transition = "top 0.5s";
+        setTimeout(()=>errorContainer.style.top = "0",0.15);
+        setTimeout(() => errorContainer.style.zIndex = "initial", 500);
+    }, 15)
+}
+
+function hideErrorContainer() {
+    let size = getComputedStyle(errorContainer).height.slice(0,-2);
+    errorContainer.style.zIndex = "-1";
+    setTimeout(()=>errorContainer.style.top = `-${+ size + 32}px`, 15)
+        setTimeout(() => {
+            errorDisplay.innerHTML = '';
+            errorContainer.style.transition = "";
+            errorContainer.style.display = "none"; 
+        },500);
 }
 
 // 3. Adding Events
@@ -123,7 +158,7 @@ firstName.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError('Error en el campo de nombre', 'Nombre inválido. Ingrese solo letras mayúsc. o minúsc.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
 })
 
@@ -136,7 +171,7 @@ lastName.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de apellido', 'Apellido inválido. Ingrese solo letras mayúsc. o minúsc.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
 })
 
@@ -157,7 +192,7 @@ idNumber.addEventListener('change', e => {
         e.target.style.backgroundColor= '#d63c40';
         let error = createError (`Error en el campo de número de ${idType.value}`, `Número de ${idType.value} inválido. Ingrese un número de ${idType.value} válido.`);
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
 })
 
@@ -170,7 +205,7 @@ address.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de dirección', 'Dirección inválida. Ingrese una dirección válida.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
 })
 
@@ -183,7 +218,7 @@ zipCode.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de código postal', 'Código postal inválido. Ingrese un código postal válido.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
 })
 
@@ -196,9 +231,9 @@ phone.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de teléfono', 'Teléfono inválido. Ingrese un teléfono válido.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
-})
+});
 
 username.addEventListener('change', e =>{
     if(clearInput(e)){return}
@@ -209,9 +244,9 @@ username.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de nombre de usuario', 'Nombre de usuario inválido. Ingrese un nombre de usuario válido.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
-})
+});
 
 password.addEventListener('change', e =>{
     if(clearInput(e)){return}
@@ -221,14 +256,13 @@ password.addEventListener('change', e =>{
         e.target.style.backgroundColor= '#d63c40';
         let error = createError ('Error en el campo de contraseña', 'Contraseña inválida. Ingrese una contraseña válida.');
         displayWarningError(e, error);
-        displayErrorInLog(error);
+        pushErrorAnimation(error);
     }
-})
+});
 
 let exceptionsReset = [resetButton, idNumber];
 
 resetButton.addEventListener('click', e => {
-    errorDisplay.innerHTML = '';
     document.querySelectorAll('input').forEach(inputName => {
         if(!exceptionsReset.includes(inputName)){
             inputName.style.backgroundColor = '#202225';
@@ -236,6 +270,7 @@ resetButton.addEventListener('click', e => {
             idNumber.disabled = true;
         }
     } )
-    errorContainer.style.display = 'none';
+    hideErrorContainer();
     totalErrorsRegistered = 1;
-})
+});
+
