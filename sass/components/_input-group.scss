@@ -4,6 +4,7 @@
     padding: 5px;
     position: relative;
     
+    
     &__label {
         margin-bottom: 0.5em;
         letter-spacing: 1px;
@@ -14,17 +15,24 @@
         background-color: #202225;
         color: #ffffff;
         border-radius: 0.3em;
-        border: none;
         outline: none;
         padding: .5em;
+        border: 1px solid transparent;
+        &:focus {
+            border: 1px solid #5865f2;
+        }
 
         &--id {
             background-color: #202225;
             color: #ffffff;
             border-radius: 0.3em;
-            border: none;
             outline: none;
             padding: .5em;
+            border: 1px solid transparent;
+
+            &:focus {
+                border: 1px solid #5865f2;
+            }
 
             &:disabled {
                 background-color: #444a52!important;
@@ -34,6 +42,8 @@
     }
     
     &__description {
+        letter-spacing: 1px;
+        font-weight: 500;
         margin-bottom: 5px;
     }
     
@@ -45,9 +55,12 @@
         background-color: #202225;
         color: #ffffff;
         border-radius: 0.3em;
-        border: none;
+        border: 1px solid transparent;
         outline: none;
         padding: .5em;
+        &:focus {
+            border: 1px solid #5865f2;
+        }
     }
 
 
@@ -56,10 +69,12 @@
             letter-spacing: 1px;
             font-weight: 500;
             margin: 0 0.5em;
+            @media (min-width: 425px){
+                margin: 0;
+            }
         }
 
         @media (min-width: 425px){
-            // margin: 0;
             flex-basis: 50%;
         }
     }

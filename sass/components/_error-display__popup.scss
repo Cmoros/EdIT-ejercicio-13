@@ -1,12 +1,22 @@
 .error-display__popup {
-    font-size: 0.9em;
+    font-size: 0.7em;
     color: #cb7678;
     font-weight: 600;
     font-family: 'Roboto', sans-serif;
     position: absolute;
-    top: 70px;
+    top: 60px;
     left: 0px;
-    // background-color: black;
     padding: 0.5em;
-    
+    @media (min-width: 425px) {
+        top: 40px;
+
+        &--address {
+            top: 70px;
+        }
+    }
+    @media (min-width: 768px) {
+        top: 67px;
+        font-size: 0.9em;
+    }
+
 }

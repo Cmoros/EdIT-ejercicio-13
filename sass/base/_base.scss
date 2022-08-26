@@ -3,7 +3,14 @@
 }
 
 body {
+    background: url(./assets/background-spot.svg) no-repeat;
+    background-size: 1300px;
+    background-position-x: center;
+    background-position-y: 0;
     background-color: #5865f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 main {
@@ -11,4 +18,11 @@ main {
     flex-direction: column;
     gap: 2em;
     padding: 3em;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+sup {
+    color: #cb7678;
 }
