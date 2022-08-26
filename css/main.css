@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap"); /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;900&display=swap");
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
 /**
@@ -363,7 +365,7 @@ table {
 }
 
 body {
-  font-family: Helvetica, sans-serif;
+  font-family: "Nunito", sans-serif;
   color: #ffffff;
 }
 
@@ -441,6 +443,8 @@ main {
 }
 .input-group__label {
   margin-bottom: 0.5em;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 .input-group__input {
   background-color: #202225;
@@ -475,6 +479,11 @@ main {
   border: none;
   outline: none;
   padding: 0.5em;
+}
+.input-group-idtype__label {
+  letter-spacing: 1px;
+  font-weight: 500;
+  margin: 0 0.5em;
 }
 @media (min-width: 425px) {
   .input-group-idtype {

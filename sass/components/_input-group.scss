@@ -6,6 +6,8 @@
     
     &__label {
         margin-bottom: 0.5em;
+        letter-spacing: 1px;
+        font-weight: 500;
     }
     
     &__input {
@@ -50,6 +52,12 @@
 
 
     &-idtype {
+        &__label {
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin: 0 0.5em;
+        }
+
         @media (min-width: 425px){
             // margin: 0;
             flex-basis: 50%;
