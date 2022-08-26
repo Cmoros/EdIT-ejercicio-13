@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Ejercicio 13 - Formulario con RegExp</title>
     <link rel="stylesheet" href="./css/main.css">
 </head>
 <body>
@@ -48,7 +48,7 @@
                 </div>
                 <div class="input-group">
                     <label for="id-number" class="input-group__label">
-                        Número de documento:
+                        Nro. de documento:
                     </label>
                     <input type="text" class="input-group__input--id" id="id-number" required disabled>
                 </div>
@@ -59,33 +59,41 @@
                     Dirección:
                 </label>
                 <input id="address" class="input-group--address__input" type="text">
+            </div>
 
-                <label class="input-group--address__label" for="zipcode">Código postal</label>
-                <input class="input-group--address__input" type="text" name="zip-code" id="zipcode">
+            <div class="main-form-group">
+                <div class="input-group">
+                    <label class="input-group__label" for="zipcode">Código postal</label>
+                    <input class="input-group__input" type="text" name="zip-code" id="zipcode">
+                </div>
+                
+                <div class="input-group">
+                    <label for="phone" class="input-group__label">
+                        Teléfono:
+                    </label>
+                        <input id="phone" class="input-group__input" type="text">
+                </div>
             </div>
             
-            <div class="input-group">
-                <label for="phone" class="input-group__label">
-                    Teléfono:
-                </label>
-                <input id="phone" class="input-group__input" type="text">
+
+            <div class="main-form-group">
+                <div class="input-group">
+                    <label for="username" class="input-group__label">
+                        Nombre de usuario:
+                    </label>
+                    <input id="username" class="input-group__input" type="text">
+                </div>
+                <div class="input-group">
+                    <label for="password" class="input-group__label">
+                        Contraseña:
+                    </label>
+                    <input id="password" class="input-group__input" type="password">
+                </div>
             </div>
 
-            <div class="input-group">
-                <label for="username" class="input-group__label">
-                    Nombre de usuario:
-                </label>
-                <input id="username" class="input-group__input" type="text">
+            <div class="form-buttons">
+                <input class="reset-button" type="reset" value="Resetear">
             </div>
-
-            <div class="input-group">
-                <label for="password" class="input-group__label">
-                    Contraseña:
-                </label>
-                <input id="password" class="input-group__input" type="password">
-            </div>
-
-            <input class="reset-button" type="reset" value="Resetear">
         </form>
     </div>
 

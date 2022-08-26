@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #5865f2;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 3em;
+}

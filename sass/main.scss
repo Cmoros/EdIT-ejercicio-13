@@ -12,12 +12,16 @@
 
 // 3. Base stuff
 @use 'base/typographies';
+@use 'base/base';
 
 // 4. Layout-related sections
 @use 'layout/form-container';
 
 // 5. Components
 @use 'components/error-display__popup';
+@use 'components/input-group';
+@use 'components/error-container';
+@use 'components/form-buttons';
 
 // 6. Page-specific styles
 

@@ -1,0 +1,127 @@
+.input-group {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    position: relative;
+    
+    &__label {
+        margin-bottom: 0.5em;
+    }
+    
+    &__input {
+        background-color: #202225;
+        color: #ffffff;
+        border-radius: 0.3em;
+        border: none;
+        outline: none;
+        padding: .5em;
+
+        &--id {
+            background-color: #202225;
+            color: #ffffff;
+            border-radius: 0.3em;
+            border: none;
+            outline: none;
+            padding: .5em;
+
+            &:disabled {
+                background-color: #444a52!important;
+                cursor: not-allowed;
+            }
+        }
+    }
+    
+    &__description {
+        margin-bottom: 5px;
+    }
+    
+    &--address__label {
+        margin-bottom: 5px;
+    }
+
+    &--address__input {
+        background-color: #202225;
+        color: #ffffff;
+        border-radius: 0.3em;
+        border: none;
+        outline: none;
+        padding: .5em;
+    }
+
+
+    &-idtype {
+        @media (min-width: 425px){
+            // margin: 0;
+            flex-basis: 50%;
+        }
+    }
+
+    
+    @media (min-width: 425px) {
+        flex-direction: row;
+        align-items: center;
+        padding: 5px;
+        gap: 0.5em;
+        
+        &__label {
+            flex-basis: 50%;
+            margin-bottom: 0;
+        }
+        
+        &__input--id {
+            flex-basis: 50%;
+            min-width: 0px;
+        }
+        
+        &__input {
+            flex-basis: 50%;
+            min-width: 0px;
+        }
+
+        &--address {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+        }
+        
+        &__description {
+            flex-basis: 50%;
+            margin-bottom: 0;
+        }
+    }
+
+    @media (min-width: 768px){
+        flex-direction: column;
+        flex-basis: 50%;
+
+        &__label {
+            align-self: flex-start;
+            padding-bottom: 5px;
+        }
+
+        &__input {
+            width: 100%;
+        }
+        
+        &__input--id {
+            width: 100%;
+        }
+
+        &--address{
+            max-width: 100%;
+            padding: 5px 0 5px 5px;
+        }
+
+        &-idtype{
+            align-self: flex-start;
+        }
+
+        &__description{
+            align-self: flex-start;
+        }
+
+        &--address__label {
+            padding-left: 2px;
+        }
+    }
+}

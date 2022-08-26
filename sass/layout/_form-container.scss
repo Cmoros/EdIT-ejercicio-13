@@ -1,117 +1,35 @@
 .form-container {
-    background-color: #ddd;
-    margin: 1em;
-    padding: 0.5em;
-    border-radius: 0.3em;
+    // background-color: rgb(156,186,216);
+    // background: linear-gradient(8deg, rgba(156,186,216,1) 0%, rgba(129,171,213,1) 50%, rgba(102,156,209,1) 100%);
+    // margin: 1em;
+    background-color: #36393f;
+    padding: 1em;
+    border-radius: 1em;
+    // box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    width: 90%;
+    max-width: 900px;
+    align-self: center;
 
     @media (min-width: 768px){
-        max-width: 800px;
-        margin: auto;
-    }
-}
-
-.input-group {
-    display: flex;
-    flex-direction: column;
-    padding: 5px;
-    position: relative;
-    
-    &__label {
-        margin-bottom: 0.5em;
-    }
-    
-    &__input {
-        border-radius: 0.3em;
-    }
-    
-    &__description {
-        margin-bottom: 5px;
-    }
-    
-    &--address__label {
-        margin-bottom: 5px;
-    }
-
-
-    &-idtype {
-        
-        @media (min-width: 425px){
-            padding: 5px;
-            margin: 0;
-        }
-    }
-
-    
-    @media (min-width: 425px) {
-        flex-direction: row;
-        align-items: center;
-        padding: 5px;
-        
-        &__label {
-            margin-right: 0.5em;
-            flex-shrink: 0;
-            margin-bottom: 0;
-        }
-        
-        &__input--id {
-            min-width: 0px;
-        }
-        
-        &--address {
-            display: flex;
-            flex-direction: column;
-            align-items: stretch;
-            max-width: 419px;
-            
-            &__label {
-                margin-bottom: 5px;
-            }
-        }
-        
-        &__description {
-            margin: 0;
-        }
-    }
-
-    @media (min-width: 768px){
-        flex-direction: column;
-        flex-basis: 50%;
-
-        &__label {
-            align-self: flex-start;
-            padding-bottom: 5px;
-        }
-
-        &__input {
-            width: 100%;
-        }
-        
-        &__input--id {
-            width: 100%;
-        }
-
-        &--address{
-            max-width: 100%;
-            padding: 5px 0 5px 5px;
-        }
-
-        &-idtype{
-            align-self: flex-start;
-        }
-
-        &__description{
-            align-self: flex-start;
-        }
-
-        &--address__label {
-            padding-left: 2px;
-        }
+        padding: 2em;
+        margin-top: 4em;
     }
 }
 
 .main-form {
-    
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
     &-name {
+        @media (min-width: 768px){
+            display: flex;
+            gap: 15px;
+        }
+    }
+
+    &-group {
         @media (min-width: 768px){
             display: flex;
             gap: 15px;
