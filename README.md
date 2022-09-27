@@ -2,7 +2,7 @@
 
 Ejercicio N° 13 del Bootcamp FullStack Engineer - EducacionIT
 
-Es un proyecto en el que se tocaron temas como diseño responsive, armado de formularios, expresiones regulares y validación de datos.
+Es un proyecto en el que se tocaron temas como diseño responsive, armado de formularios, expresiones regulares y validación de datos. Para cada campo se creo una expresión regular que validará cada campo, y caso contrario mediante cierta animación muestra los errores contenidos en los campos, en conjunto con un historial que se mostrará en la parte inferior de la página, informando de cada error que se tuvo. El formulario solo cuenta con un botón  de resetear que vuelve a la normalidad todos los campos y reinicia el historial de errores.
 
 #### [🔗Link a GitHub Page del proyecto](https://cmoros.github.io/EdIT-ejercicio-13/)
 
