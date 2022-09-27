@@ -82,4 +82,11 @@ Dirección:
 
 ---
 
+## Galería:
+
+![cmoros github io_EdIT-ejercicio-13_](https://user-images.githubusercontent.com/93099135/192638342-ec1c6127-1125-451b-8329-d7fc1d308a69.png)
+
+![cmoros github io_EdIT-ejercicio-13_2](https://user-images.githubusercontent.com/93099135/192638595-e27ee2f3-0cc7-4056-bb67-0c1238b82d8b.png)
+
+
 ## [🔗Link a GitHub Page del proyecto](https://cmoros.github.io/EdIT-ejercicio-13/)
